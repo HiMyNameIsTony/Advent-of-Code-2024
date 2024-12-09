@@ -46,7 +46,7 @@ pub fn main() !void {
         if (string[int1_len + int2_len] != ')') {
             int2 = 0; //bad format, add nothing
         }
-        if (do) {
+        if (do) { // change this to true for part 1 only
             valid_inputs += 1;
             total_mul += int1 * int2;
             std.debug.print("found ints: {d} and {d}\n", .{ int1, int2 });
@@ -69,7 +69,7 @@ pub fn main() !void {
     }
 
     std.debug.print("total multiplier: {d}\nvalid inputs: {d}\n", .{ total_mul, valid_inputs });
-    // part 2 of the solution
+    // part 2 of the solution involves using the below functions to approve the do/dont calls.
 
 }
 
@@ -79,7 +79,7 @@ fn find_do(string: [100]u8) usize {
             if (string[i + 1] == 'o') {
                 if (string[i + 2] == '(') {
                     if (string[i + 3] == ')') {
-                        std.debug.print("{s}", .{string});
+                        std.debug.print("{s}\n", .{string});
                         return i;
                     }
                 }
@@ -98,7 +98,7 @@ fn find_dont(string: [100]u8) usize {
                         if (string[i + 4] == 't') {
                             if (string[i + 5] == '(') {
                                 if (string[i + 6] == ')') {
-                                    std.debug.print("{s}", .{string});
+                                    std.debug.print("{s}\n", .{string});
                                     return i;
                                 }
                             }
