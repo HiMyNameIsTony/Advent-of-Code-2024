@@ -13,6 +13,7 @@ pub fn main() !void {
     const data = try ingest(allocator, input_file);
 
     std.debug.print("{s}\n", .{data});
+    // part 1 of the solution
     std.mem.sort(u32, &list1, {}, comptime std.sort.asc(u32));
     std.mem.sort(u32, &list2, {}, comptime std.sort.asc(u32));
 
@@ -23,6 +24,16 @@ pub fn main() !void {
     }
 
     std.debug.print("total diff: {d}\n", .{total_distance});
+    var total_mult: usize = 0;
+    // part 2 of the solution
+    for (list1) |item1| {
+        for (list2) |item2| {
+            if (item1 == item2) {
+                total_mult += item2;
+            }
+        }
+    }
+    std.debug.print("total mult: {d}\n", .{total_mult});
 }
 
 fn ingest(allocator: std.mem.Allocator, input: []const u8) ![]const u8 {
