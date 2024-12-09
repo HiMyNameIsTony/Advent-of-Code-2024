@@ -66,6 +66,7 @@
         "build.zig.zon",
         "day01",
         "day02",
+        "day03",
         // For example...
         //"LICENSE",
         //"README.md",
