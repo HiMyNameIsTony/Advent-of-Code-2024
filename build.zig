@@ -5,7 +5,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
     const exe = b.addExecutable(.{
         .name = "Advent-of-Code-2024",
-        .root_source_file = b.path("day03/day03.zig"),
+        .root_source_file = b.path("day04/day04.zig"),
         .target = target,
         .optimize = optimize,
     });
